@@ -16,6 +16,7 @@ class Solution:
         return head
 
     def gdc(self, a: int, b: int) -> int:
-        for num in range(min(a, b), 0, -1):
-            if a % num == 0 and b % num == 0:
-                return num
+        if(b == 0):
+            return abs(a)
+        else:
+            return self.gdc(b, a % b)
