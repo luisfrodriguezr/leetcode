@@ -2,7 +2,7 @@ class Solution:
     def countPoints(self, points: List[List[int]], queries: List[List[int]]) -> List[int]:
         result: List[int] = []
         for query in queries:
-            # Start the result for the j(th) answer
+            # Set the initial result for the j(th) answer
             result.append(0)
             for point in points:
                 # Compute the euclidean distance between points
