@@ -6,6 +6,7 @@ public:
       numbers.insert(i);
     }
     for (auto& range: ranges) {
+      if (range[0] > right || range[1] < left) continue;
       for (int i = range[0]; i <= range[1]; i++) {
         numbers.erase(i);
         if (numbers.empty()) return true;
