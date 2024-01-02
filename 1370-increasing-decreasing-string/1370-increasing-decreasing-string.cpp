@@ -6,8 +6,8 @@ public:
  
     for (int i = 0; i < s.size(); i++) ht[s[i] - 'a']++;
     
-    int step = 1, i = 0;
-    while (ans.size() < s.size()) {
+    int step = 1, i = 0, n = s.size(), m = 0;
+    while (m < n) {
       if (i == -1) {
         step = 1;
         i = 0;
@@ -18,6 +18,7 @@ public:
       }
       if (ht[i] > 0) {
         ans += char('a' + i);
+        m++;
         ht[i]--;
       }
       i += step;
