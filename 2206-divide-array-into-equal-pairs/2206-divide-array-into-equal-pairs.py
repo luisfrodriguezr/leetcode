@@ -4,10 +4,8 @@ class Solution:
     
     for num in nums:
       hashMap[num] = hashMap.get(num, 0) + 1
+      if hashMap[num] == 2:
+        del hashMap[num]
     
-    for num in hashMap:
-      if (hashMap[num] % 2):
-        return False
-      
-    return True
+    return not bool(len(hashMap))
         
