@@ -7,7 +7,7 @@ class Solution:
     
     hashMap_occ = dict()
     for key, value in hashMap.items():
-      if value in hashMap_occ: return False
+      if hashMap_occ.get(value, 0) == 1: return False
       hashMap_occ[value] = 1
     
     return True
