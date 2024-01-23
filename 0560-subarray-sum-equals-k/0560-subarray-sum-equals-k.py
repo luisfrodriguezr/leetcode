@@ -4,8 +4,7 @@ class Solution:
     curr = ans = 0
     for num in nums:
       curr += num
-      if curr - k in hash_map:
-        ans += hash_map[curr - k]
+      ans += hash_map.get(curr - k, 0)
       hash_map[curr] = hash_map.get(curr, 0) + 1   
     return ans
       
