@@ -7,7 +7,7 @@ class Solution:
     for right in range(len(s)):
       key = ord(s[right]) - ord('a')
       
-      if hash_table[key] >= 0 and hash_table[key] >= left:
+      if hash_table[key] >= left:
         left = hash_table[key] + 1
       
       ans = max(ans, right - left + 1)
