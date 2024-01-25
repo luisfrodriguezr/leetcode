@@ -1,10 +1,10 @@
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
-      memo = [[0 for _ in text2] for _ in text1]
+      memo = [[-1 for _ in text2] for _ in text1]
       def LCS(p1, p2):
         if p1 == len(text1) or p2 == len(text2):
           return 0
-        if memo[p1][p2] > 0:
+        if memo[p1][p2] >= 0:
           return memo[p1][p2]
         
         problem_1 = LCS(p1 + 1, p2)
