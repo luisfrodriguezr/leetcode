@@ -5,10 +5,8 @@ class Solution:
       
       for word in words:
         key = tuple(sorted(set(word)))
-        hash_map[key] = hash_map.get(key, 0) + 1
+        hash_map[key] = hash_map.get(key, -1) + 1
+        ans += hash_map[key]
       
-      for value in hash_map.values():
-        ans += int(value * (value - 1) / 2)
-        
       return ans
         
