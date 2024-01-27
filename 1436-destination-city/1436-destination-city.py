@@ -3,7 +3,7 @@ class Solution:
     hash_map = dict()
     
     for path in paths:
-      hash_map[path[0]] = hash_map.get(path[0], 0) + 1
+      hash_map[path[0]] = 1
       hash_map[path[1]] = hash_map.get(path[1], 0)
     
     for city in hash_map:
