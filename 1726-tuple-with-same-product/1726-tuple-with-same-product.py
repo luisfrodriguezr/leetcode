@@ -11,4 +11,3 @@ class Solution:
           ans += hash_map[prod]
     
     return ans * 8;
-      
