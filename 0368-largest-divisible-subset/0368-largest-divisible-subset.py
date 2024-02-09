@@ -17,7 +17,7 @@ class Solution:
     for i, num in enumerate(nums):
       hash_map[num] = num
       for j in range(0, i):
-        if nums[j] % num == 0 or num % nums[j] == 0:
+        if num % nums[j] == 0:
           if dp[j] + 1 > dp[i]:
             dp[i] = dp[j] + 1
             hash_map[num] = nums[j]
