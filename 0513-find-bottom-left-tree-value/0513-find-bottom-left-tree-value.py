@@ -7,16 +7,18 @@
 from collections import deque
 class Solution:
     def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:
-      def reflected_bfs(root):
-        ans = root.val
-        queue = deque()
-        queue.append(root)
-        while len(queue):
-          node = queue.popleft()
-          if node.right: queue.append(node.right)
-          if node.left: queue.append(node.left)
-          ans = node.val
-        
-        return ans
-      
-      return reflected_bfs(root)
+      def dfs(node):
+        if node is None:
+          return 0
+        left = dfs(node.left)
+        right = dfs(node.right)
+        if right > left: 
+          if node.right is not None:
+            node.val = node.right.val
+          return right + 1
+        else:
+          if node.left is not None:
+            node.val = node.left.val
+          return left + 1
+      dfs(root)
+      return root.val
