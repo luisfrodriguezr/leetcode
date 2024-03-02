@@ -1,5 +1,5 @@
 // Time complexity O(n)
-// Space complexity O(n) if considering the output
+// Space complexity O(n) when considering the output
 class Solution {
 public:
   vector<int> sortedSquares(vector<int>& nums) {
